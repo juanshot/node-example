@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 // using handlebars como template engine
 // registering partials folder
 hbs.registerPartials('./views/partials');
@@ -59,6 +60,6 @@ app.get('/about', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('server is log on the port 300');
+app.listen(port, () => {
+    console.log(`server is log on the port ${port}`);
 });
